@@ -1,0 +1,18 @@
+.ant-menu-item-selected {
+  color: black !important;
+  /* Change the text color to black */
+  font-weight: bold !important;
+  /* Make the text bold */
+}
+
+/* Optionally, to remove the blue underline */
+.ant-menu-item-selected::after {
+  border-bottom: none !important;
+}
+
+/* styles.css */
+.sign-out-button {
+  float: right;
+  margin-left: auto;
+}
+

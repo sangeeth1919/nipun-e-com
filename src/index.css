@@ -1,0 +1,37 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #6d7c90;
+  font-family: 'Inter' !important;
+  font-size: 17px;
+  line-height: 1.75em;
+  padding: 0;
+  text-align: left;
+}
+
+:where(.css-dev-only-do-not-override-1ru20fs).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected, :where(.css-dev-only-do-not-override-1ru20fs).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected, :where(.css-dev-only-do-not-override-1ru20fs).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected, :where(.css-dev-only-do-not-override-1ru20fs).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected {
+  color: #000000 !important;
+  background-color: transparent;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  background: #fff !important; /* Set background color to white */
+  color: #000 !important; /* Set text color to black */
+}
+
+.ant-layout {
+  background: #fff !important; /* Set Ant Layout background to white */
+}
+
+.ant-btn-primary {
+  background: #1890ff !important; /* Customize button colors if needed */
+}
+
+.ant-layout.css-dev-only-do-not-override-1ru20fs {
+  background: #fff !important;
+}
