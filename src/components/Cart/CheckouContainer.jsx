@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Button, List, Typography, Divider, Row, Col } from 'antd';
+import { Button, List, Typography, Divider } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import styles from './CheckoutContainer.styles';
 import { useSelector } from 'react-redux';
@@ -42,23 +42,23 @@ const CheckouContainer = () => {
     const navigateToBill = () => {
         navigate(`/shop`)
     }
-    
-      // Handle mobile view based on window size
-      const handleResize = () => {
+
+    // Handle mobile view based on window size
+    const handleResize = () => {
         setIsMobile(window.innerWidth < 1080); // Change threshold for mobile view
-      };
-    
-      // Detect initial window size on component mount
-      useEffect(() => {
+    };
+
+    // Detect initial window size on component mount
+    useEffect(() => {
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-      }, []);
+    }, []);
 
     return (
         <div style={styles.pageContainer}>
             <List
-                itemLayout={isMobile?"vertical":"horizontal"}
+                itemLayout={isMobile ? "vertical" : "horizontal"}
                 dataSource={cartItems}
                 renderItem={(item) => (
                     <List.Item

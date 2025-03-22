@@ -20,3 +20,7 @@ export const loaderKeys = {
     stockIssuenceLoad: "stockIssuenceLoad",
     addNewBill: "addNewBill"
 }
+
+
+export const protactedRoute = [
+]

@@ -21,6 +21,7 @@ import Loader from './components/Common/Loader/Loader';
 import CartIcon from './components/Cart/CartIcon';
 import CartPage from './pages/Shop/CartPage/CartPage';
 import AlertContainer from './components/Common/Notification/AlertContainer';
+import PageNotAccess from './components/Common/PageNotAccess/PageNotAccess';
 
 function App() {
 
@@ -64,19 +65,19 @@ function App() {
             <CartIcon />
             <Navbar />
             <Routes>
-
-              <Route path="/" element={<HomePage />} />
-              <Route path="/category/:id" element={<CategoryPage />} />
-              <Route path="/shop" element={<Shop />} />
-              <Route path="/product/:id" element={<ProductPage />} />
-              <Route path="/stock-maintain/:productName" element={<StockPage />} />
-              <Route path="/stock-buy-register" element={<StockRegister />} />
-              <Route path="/cart" element={<CartPage />} />
+              <Route path="/no-access" element={<PageNotAccess />} />
+              <Route path="/" element={<AdminGuard user={user}><HomePage /></AdminGuard>} />
+              <Route path="/category/:id" element={<AdminGuard user={user}><CategoryPage /></AdminGuard>} />
+              <Route path="/shop" element={<AdminGuard user={user}><Shop /></AdminGuard>} />
+              <Route path="/product/:id" element={<AdminGuard user={user}><ProductPage /></AdminGuard>} />
+              <Route path="/stock-maintain/:productName" element={<AdminGuard user={user}><StockPage /></AdminGuard>} />
+              <Route path="/stock-buy-register" element={<AdminGuard user={user}><StockRegister /></AdminGuard>} />
+              <Route path="/cart" element={<AdminGuard user={user}><CartPage /></AdminGuard>} />
               <Route
                 path="/product/add"
                 element={<AdminGuard user={user}><AddProductPage /></AdminGuard>}
               />
-              <Route path="/login" element={user ? <Navigate to="/" /> : <LoginPage />} />
+              <Route path="/login" element={user ? <AdminGuard user={user}><Navigate to="/" /></AdminGuard> : <LoginPage />} />
             </Routes>
           </Router>
         )

@@ -1,8 +1,6 @@
 
-import { addDocument, deleteDocument, editDocument, getCollection, getDocsByQuery } from "./firestore";
-import { billsCollectionName, loaderKeys, productsCollectionName } from "../constants/appConstants";
-import { collection, query, where } from "firebase/firestore";
-import { db } from "../firebase";
+import { addDocument} from "./firestore";
+import { billsCollectionName, loaderKeys } from "../constants/appConstants";
 import { addLoaderService, removeLoaderService } from "./utils";
 import store from "../redux/store";
 import { v4 as uuidv4 } from 'uuid';

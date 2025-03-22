@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 function Navbar() {
     const navigate = useNavigate();
     const { fSUser } = useSelector((state) => state.auth);
-    const isAdmin = fSUser?.isAdmin;
+
     const handleSignOut = async () => {
         try {
             await signOut(auth);
@@ -27,7 +27,7 @@ function Navbar() {
             key: '2',
             label: <Link to="/shop">Billing</Link>,
         },
-        isAdmin && {
+        {
             key: '4',
             label: <Link to="product/add">Add Products</Link>,
         },
@@ -46,7 +46,9 @@ function Navbar() {
             style: { marginLeft: 'auto', border: 'none', background: 'transparent' }, // Align to the right
         },
     ];
-
+    if (!fSUser?.isActive) {
+        return (<></>)
+    }
     return (
         <Menu theme="light" color='black' mode="horizontal" style={{ display: 'flex', justifyContent: 'flex-start' }}>
             {menuItems.map(item =>
