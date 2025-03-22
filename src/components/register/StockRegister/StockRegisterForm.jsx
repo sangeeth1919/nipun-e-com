@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { Button, Col, DatePicker, Form, Input, InputNumber, Row, Select } from 'antd';
 import dayjs from 'dayjs';
-import { addLoaderService, getRoundValue, removeLoaderService } from '../../../utils/utils';
-import { cashBookCollectionName, loaderKeys } from '../../../constants/appConstants';
-import { addProductService, editProducts } from '../../../utils/productHelper';
+import { addLoaderService, removeLoaderService } from '../../../utils/utils';
+import { loaderKeys } from '../../../constants/appConstants';
+import { editProducts } from '../../../utils/productHelper';
 import { useEffect, useState } from 'react';
-import { getCurrentDateAndTime, uniquTime } from '../../../utils/dateHelper';
+import { uniquTime } from '../../../utils/dateHelper';
 import { addStockBuyService } from '../../../utils/stockHelper';
 import { FORM_DATE } from '../../../constants/dateConstants';
 import { addTransactionCash } from '../../../utils/transactionHelper';
@@ -71,7 +72,6 @@ const StockRegisterForm = (
   const handleEditProduct = async (values) => {
     try {
       addLoaderService(loaderKeys.productAdd)
-      console.log(values)
       await editProducts(values)
       removeLoaderService(loaderKeys.productAdd)
       formReset()
@@ -92,7 +92,6 @@ const StockRegisterForm = (
   }
 
   const formReset = () => {
-    console.log('fdf')
     fetchStock()
     form.resetFields();
   }

@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 // src/pages/HomePage.js
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PageHeader from '../../components/Common/PageHeader/PageHeader';
 import { useParams } from 'react-router-dom';
 import PageContainer from '../../components/Common/PageContainer/PageContainer';
@@ -90,10 +92,9 @@ function StockPage() {
   }
 
   const fetchStock = async () => {
-    addLoaderService(loaderKeys.getCategory)
     const res = await getStocksByProducName('pName', params.productName)
     
-    console.log('res', res);
+    addLoaderService(loaderKeys.getCategory)
     if (res && res.length !== 0) {
       const data = res.map((st) => {
         return {
@@ -102,7 +103,6 @@ function StockPage() {
         }
       })
       setDataSource(data)
-      console.log('data', data)
     }
 
     removeLoaderService(loaderKeys.getCategory)

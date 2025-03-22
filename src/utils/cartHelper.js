@@ -1,6 +1,6 @@
 
 
-import { addItemToCart, changeQty, removeItemFromCart } from '../redux/cartSlice';
+import { addItemToCart, changeQty, clearCartReducer, removeItemFromCart } from '../redux/cartSlice';
 import store from '../redux/store';
 
 export const addItemToCartService = (product) => {
@@ -20,3 +20,9 @@ export const removeItemFromCartService = (pName) => {
         pName
     }));
 };
+
+
+export const clearCartService = () => {
+    store.dispatch(clearCartReducer());
+};
+

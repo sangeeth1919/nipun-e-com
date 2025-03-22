@@ -39,9 +39,7 @@ export const getDocsByQuery = async (query) => {
 
 export const addDocument = async (collectionName, obj) => {
     try {
-        console.log('collectionName', collectionName)
         const state = store.getState(); // Access the entire Redux state
-        console.log('collectionName', state.auth.fSUser.email)
         const docRef = await addDoc(collection(db, collectionName), { ...obj, lastUpdateBy: state.auth.fSUser.email });
         return docRef;
     } catch (error) {

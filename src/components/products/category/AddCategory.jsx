@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Input, Modal } from 'antd';
-import { categoryCollectionName, loaderKeys } from '../../../constants/appConstants';
+import {  Input, Modal } from 'antd';
+import {  loaderKeys } from '../../../constants/appConstants';
 import { addCategoryService } from '../../../utils/categoryHelpeer';
 import { addLoaderService, removeLoaderService } from '../../../utils/utils';
 import { v4 as uuidv4 } from 'uuid';

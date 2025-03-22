@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useMemo } from 'react';
 import { DeleteOutlined, EditOutlined, InboxOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import { Button, Card, InputNumber, Space } from 'antd';
+import { Card} from 'antd';
 import styles from './ProductCard.styles';
 import { deleteItemService } from '../../../utils/productHelper';
 import { useSelector } from 'react-redux';
@@ -39,7 +40,6 @@ const ProductCard = ({ product, fetchProducts, editProduct = () => { } }) => {
     }
 
     const addToCart = () => {
-        console.log('product', product)
         addItemToCartService(product)
 
     }

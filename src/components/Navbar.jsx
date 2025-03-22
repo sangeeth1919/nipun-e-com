@@ -27,10 +27,6 @@ function Navbar() {
             key: '2',
             label: <Link to="/shop">Billing</Link>,
         },
-        {
-            key: '3',
-            label: <Link to="/category/2">Clothing</Link>,
-        },
         isAdmin && {
             key: '4',
             label: <Link to="product/add">Add Products</Link>,
@@ -54,15 +50,15 @@ function Navbar() {
     return (
         <Menu theme="light" color='black' mode="horizontal" style={{ display: 'flex', justifyContent: 'flex-start' }}>
             {menuItems.map(item =>
-                item.children ? (
-                    <Menu.SubMenu key={item.key} title={item.label}>
-                        {item.children.map(subItem => (
-                            <Menu.Item key={subItem.key}>{subItem.label}</Menu.Item>
+                item?.children ? (
+                    <Menu.SubMenu key={item?.key} title={item?.label}>
+                        {item?.children.map(subItem => (
+                            <Menu.Item key={subItem?.key}>{subItem?.label}</Menu.Item>
                         ))}
                     </Menu.SubMenu>
                 ) : (
-                    <Menu.Item key={item.key} style={item.style || {}}>
-                        {item.label}
+                    <Menu.Item key={item?.key} style={item?.style || {}}>
+                        {item?.label}
                     </Menu.Item>
                 )
             )}

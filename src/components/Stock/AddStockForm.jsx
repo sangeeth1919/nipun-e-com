@@ -1,12 +1,8 @@
 // src/components/AddProduct.jsx
-import React, { useEffect, useMemo, useState } from 'react';
-import { Input, Button, Form, InputNumber, Select, Row, Col } from 'antd';
-import { addProductService, editProducts } from '../../utils/productHelper';
+import React, { useEffect, useState } from 'react';
+import { Button, Form, InputNumber, Select, Row, Col } from 'antd';
 import { loaderKeys } from '../../constants/appConstants';
 import { addLoaderService, getRoundValue, removeLoaderService } from '../../utils/utils';
-import { Content } from 'antd/es/layout/layout';
-import { useSelector } from 'react-redux';
-import { DatePicker } from 'antd';
 import { addStockItemService, getStockService } from '../../utils/stockHelper';
 import dayjs from 'dayjs';
 

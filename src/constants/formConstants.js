@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
 import { chequeStatus } from "./transactionConstants"
+import store from "../redux/store"
 
 export const stockBillRegisterForm = {
     merchent: '',
@@ -27,6 +28,28 @@ export const cashBookIn = (transaction, ammount, type, uuid) => {
         ammount: ammount,
         type: type,
         uuid: uuid
+    }
+}
+
+export const billInsertObj = (billNumber, ammount, type = 'cash', discount = '0') => {
+    return {
+        bill_number: billNumber,
+        dateAndTime: new dayjs().toDate(),
+        ammount: ammount,
+        type: type,
+        discount: discount
+    }
+}
+
+export const stockIssueForm = (billNumber, issuanceCount, pName, price) => {
+    const state = store.getState();
+    return {
+        bill_number: billNumber,
+        dateAndTime: new dayjs().toDate(),
+        issuance_count: issuanceCount,
+        lastUpdateBy: state?.auth?.fSUser?.email,
+        pName: pName,
+        selling_price: price
     }
 }
 

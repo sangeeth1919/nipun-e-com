@@ -1,10 +1,9 @@
 // src/components/AddProduct.jsx
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Input, Button, Form, InputNumber, Select, Row, Col } from 'antd';
 import { addProductService, editProducts } from '../../utils/productHelper';
 import { loaderKeys } from '../../constants/appConstants';
 import { addLoaderService, removeLoaderService } from '../../utils/utils';
-import { Content } from 'antd/es/layout/layout';
 import { useSelector } from 'react-redux';
 
 
@@ -60,7 +59,6 @@ const AddProductForm = (
   const handleEditProduct = async (values) => {
     try {
       addLoaderService(loaderKeys.productAdd)
-      console.log(values)
       await editProducts({
         ...values,
         name: values.pName,

@@ -7,7 +7,6 @@ import { db } from "../firebase";
 export const getNewProduct = async () => {
     try {
         const products = await getCollection(productsCollectionName);
-        console.log("products", products)
         return products;
     } catch (error) {
         console.error('Error fetching products:', error);
@@ -31,7 +30,6 @@ export const getProductDataByName = async (name) => {
 export const editProducts = async (obj,docId) => {
     try {
         const products = await editDocument(productsCollectionName, obj, docId);
-        console.log("products", products)
         return products;
     } catch (error) {
         console.error('Error fetching products:', error);

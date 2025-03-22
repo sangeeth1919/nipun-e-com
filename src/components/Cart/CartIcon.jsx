@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Badge } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';

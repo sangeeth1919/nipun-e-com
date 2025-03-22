@@ -6,7 +6,6 @@ import { getNewProduct } from '../../utils/productHelper';
 import ProductList from '../../components/products/ProductList';
 import { loaderKeys } from '../../constants/appConstants';
 import { addLoaderService, removeLoaderService } from '../../utils/utils';
-import { getCategoryService } from '../../utils/categoryHelpeer';
 import PageContainer from '../../components/Common/PageContainer/PageContainer';
 import PageHeader from '../../components/Common/PageHeader/PageHeader';
 import DataContainer from '../../components/Common/DataContainer/DataContainer';

@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from 'react';
-import { Layout, Menu, Button, Collapse, Card, Input } from 'antd';
+import { Layout, Menu, Collapse } from 'antd';
 import { DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import styles from './CategoryList.styes';
 import AddCategory from './AddCategory';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/pages/HomePage.js
 
 import { useEffect, useState } from "react";
@@ -14,7 +15,7 @@ import { getStockService, removeStockService } from "../../../utils/stockHelper"
 import { getFireStoreReadableDate } from "../../../utils/dateHelper";
 import { removeTransaction } from "../../../utils/transactionHelper";
 import { removeCheckService } from "../../../utils/chequeHepler";
-import { DeleteOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { DeleteOutlined } from '@ant-design/icons';
 import { useSelector } from "react-redux";
 
 

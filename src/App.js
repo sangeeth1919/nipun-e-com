@@ -11,7 +11,6 @@ import LoginPage from './pages/Login/LoginPage';
 import { login, logout, setFireStoreUser } from './redux/authSlice';
 import AddProductPage from './pages/Product/AddProductPage';
 import Shop from './pages/Shop/Shop';
-import { Spin } from 'antd';
 import { getFsUserData } from './utils/firestore';
 import { addLoaderService, removeLoaderService } from './utils/utils';
 import { loaderKeys } from './constants/appConstants';
@@ -21,6 +20,7 @@ import StockRegister from './pages/Register/StockRegister/StockRegister';
 import Loader from './components/Common/Loader/Loader';
 import CartIcon from './components/Cart/CartIcon';
 import CartPage from './pages/Shop/CartPage/CartPage';
+import AlertContainer from './components/Common/Notification/AlertContainer';
 
 function App() {
 
@@ -35,7 +35,6 @@ function App() {
       if (user) {
         addLoaderService(loaderKeys.updateUser)
         const res = await getFsUserData(user);
-        console.log('user_res', res)
         dispatch(setFireStoreUser(res));
         removeLoaderService(loaderKeys.updateUser)
         // Dispatch login action if the user is logged in
@@ -48,11 +47,11 @@ function App() {
     return () => unsubscribe();
   }, [dispatch]);
 
-
-
+  // Open a notification when the component mounts
 
   return (
     <>
+      <AlertContainer />
       {loaders.length >= 1 && <Loader />}
       {
         !isAuthenticated ? (<Router>

@@ -1,6 +1,6 @@
 
-import { addDocument, deleteDocument, editDocument, getCollection, getDocsByQuery } from "./firestore";
-import { cashBookCollectionName, cheqeCollectionName, stockBuyCollection } from "../constants/appConstants";
+import { addDocument, deleteDocument, getDocsByQuery } from "./firestore";
+import { cheqeCollectionName } from "../constants/appConstants";
 import { collection, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 
