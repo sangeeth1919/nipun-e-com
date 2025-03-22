@@ -18,9 +18,6 @@ const AddStockForm = (
   const [form] = Form.useForm();
   const handleAddProduct = async (values) => {
     try {
-      const selectedBill = stockBills.find((bill) => bill.value === values.billIdentyfier)
-      console.log('values', values)
-      console.log('selectedBill', selectedBill)
       const obj = {
         ...values,
         qntLeft: parseFloat(values.qnt),

@@ -16,17 +16,6 @@ export const getStockService = async () => {
 }
 
 
-// export const editProducts = async (obj,docId) => {
-//     try {
-//         const products = await editDocument(productsCollectionName, obj, docId);
-//         console.log("products", products)
-//         return products;
-//     } catch (error) {
-//         console.error('Error fetching products:', error);
-//     } finally {
-//     }
-// }
-
 
 export const removeStockService = async (docId) => {
     try {

@@ -4,7 +4,6 @@ import { Table } from 'antd';
 const MyTable = ({ columns, dataSource, enableSelect = false }) => {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const onSelectChange = (newSelectedRowKeys) => {
-        console.log('selectedRowKeys changed: ', newSelectedRowKeys);
         setSelectedRowKeys(newSelectedRowKeys);
     };
     const rowSelection = {

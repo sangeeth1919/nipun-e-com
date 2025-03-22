@@ -21,10 +21,7 @@ export const handleNewSellsService = async () => {
         const cartTotal = getCartTotal(cartActiveList)
 
         const cashBookObj = genarateCashBookObjBill(cartTotal, billNumber);
-        console.log('cashBookObj', cashBookObj);
-
         const stockIssueArray = getStockIssueObj(cartActiveList, billNumber);
-        console.log('stockIssueArray', stockIssueArray);
 
         const billObj = billInsertObj(billNumber, cartTotal);
         await insertNewBill(billObj);
