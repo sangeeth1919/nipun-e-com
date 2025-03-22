@@ -21,7 +21,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 'lts'  # This will install the latest LTS version of Node.js
+       node-version: '22.x'  # This will install the latest LTS version of Node.js
 
     # Step 3: Install dependencies
     - name: Install dependencies
